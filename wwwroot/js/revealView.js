@@ -89,7 +89,7 @@ window.createRevealTheme = function () {
     theme.regularFont = "Poppins";
     theme.mediumFont = "Poppins";
     theme.boldFont = "Poppins";
-    theme.useRoundedCorners = true;
+    theme.useRoundedCorners = false;
     theme.accentColor = "#09B1A9";
     return theme;
 }

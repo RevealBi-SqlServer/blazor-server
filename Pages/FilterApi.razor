@@ -44,6 +44,12 @@
     protected override async Task OnInitializedAsync()
     {
         employeeInfo = await DashboardService.GetEmployeesAsync();
+        if (employeeInfo != null && employeeInfo.Any())
+        {
+            await OnEmployeeCardClicked(employeeInfo.First());
+        }
+
+
         await base.OnInitializedAsync();
     }
 

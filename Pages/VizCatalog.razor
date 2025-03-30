@@ -62,6 +62,10 @@
     protected override async Task OnInitializedAsync()
     {
         visualizationChartInfo = DashboardService.GetVisualizationChartInfos();
+        if (visualizationChartInfo != null && visualizationChartInfo.Any())
+        {
+            await ListItemClick(visualizationChartInfo.First());
+        }
     }
 
     private async Task ListItemClick(VisualizationChartInfo item)

@@ -43,6 +43,10 @@
     protected override async Task OnInitializedAsync()
     {
         dashboardNames = await DashboardService.GetDashboardNamesWithThumbnailsAsync();
+        if (dashboardNames != null && dashboardNames.Any())
+        {
+            await OnDashboardCardClicked(dashboardNames.First());
+        }
     }
 
     private async Task OnDashboardCardClicked(DashboardNamesWithThumbnail dashboard)
